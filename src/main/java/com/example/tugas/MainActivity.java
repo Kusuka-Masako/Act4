@@ -30,7 +30,38 @@ public class MainActivity extends AppCompatActivity {
 
                 if(edtuser.getText().toString().equals("KusukaMasako")&& edtpw.getText().toString().equals("qwerty123")){
                     Toast t = Toast.makeText(getApplicationContext(),
-                            "LOGIN SUKSES", Toast.LENGTH_LONG);
+                            "LOGIN BERHASIL", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if(edtuser.getText().toString().equals("")&& edtpw.getText().toString().equals("")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Masukkan Username dan Password", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if (!edtuser.getText().toString().equals("KusukaMasako")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Username Salah", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if (!edtpw.getText().toString().equals("qwerty123")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                    "Password Salah", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if (!edtuser.getText().toString().equals("")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Masukkan Username", Toast.LENGTH_LONG);
+                    t.show();
+
+                }
+                else if(edtuser.getText().toString().equals("KusukaMasako")&& edtpw.getText().toString().equals("")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Masukkan Password", Toast.LENGTH_LONG);
+                    t.show();
+                }
+                else if(edtuser.getText().toString().equals("")&& edtpw.getText().toString().equals("qwerty123")){
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Masukkan Username", Toast.LENGTH_LONG);
                     t.show();
                 }
                 else {
