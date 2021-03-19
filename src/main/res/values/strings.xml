@@ -3,4 +3,11 @@
     <string name="tEmail">Email</string>
     <string name="tPassword">Password</string>
     <string name="tsignin">Sign in</string>
+    <string name="tlupapw">Lupa Password</string>
+    <string name="tHello">Hai,  </string>
+    <string name="txtsambutan">Selamat Datang di Aplikasi kami.
+    Silahkan klik tombol okay untuk melanjutkan</string>
+    <string name="label">HOME</string>
+    <string name="btnlanjut">Okay</string>
+
 </resources>

@@ -2,6 +2,7 @@ package com.example.tugas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnlgn;
     EditText edtuser, edtpw;
     String name, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,46 +29,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 name = edtuser.getText().toString();
                 password = edtpw.getText().toString();
+                String username = "KusukaMasako";
+                String pwd = "fathoni123";
 
-                if(edtuser.getText().toString().equals("KusukaMasako")&& edtpw.getText().toString().equals("qwerty123")){
+                if (name.isEmpty() || password.isEmpty()) {
                     Toast t = Toast.makeText(getApplicationContext(),
-                            "LOGIN BERHASIL", Toast.LENGTH_LONG);
+                            "Masukkan Email dan Password",
+                            Toast.LENGTH_LONG);
                     t.show();
-                }
-                else if(edtuser.getText().toString().equals("")&& edtpw.getText().toString().equals("")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Masukkan Username dan Password", Toast.LENGTH_LONG);
-                    t.show();
-                }
-                else if (!edtuser.getText().toString().equals("KusukaMasako")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Username Salah", Toast.LENGTH_LONG);
-                    t.show();
-                }
-                else if (!edtpw.getText().toString().equals("qwerty123")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                    "Password Salah", Toast.LENGTH_LONG);
-                    t.show();
-                }
-                else if (!edtuser.getText().toString().equals("")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Masukkan Username", Toast.LENGTH_LONG);
-                    t.show();
-
-                }
-                else if(edtuser.getText().toString().equals("KusukaMasako")&& edtpw.getText().toString().equals("")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Masukkan Password", Toast.LENGTH_LONG);
-                    t.show();
-                }
-                else if(edtuser.getText().toString().equals("")&& edtpw.getText().toString().equals("qwerty123")){
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Masukkan Username", Toast.LENGTH_LONG);
-                    t.show();
-                }
-                else {
-                    Toast.makeText((getApplicationContext()), "Username atau Password Salah",
-                            Toast.LENGTH_LONG).show();
+                } else {
+                    if (name.equals(username) && password.equals(pwd)) {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Berhasil",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                        Bundle b = new Bundle();
+                        b.putString("a", name.trim());
+                        b.putString("b", password.trim());
+                        Intent i = new Intent(MainActivity.this, Home.class);
+                        i.putExtras(b);
+                        startActivity(i);
+                    } else {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Gagal", Toast.LENGTH_LONG);
+                        t.show();
+                    }
                 }
             }
         });
