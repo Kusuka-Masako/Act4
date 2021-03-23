@@ -1,13 +1,25 @@
 <resources>
+    <string name="labelmain">Login</string>
+    <string name="labelHome2">HOME</string>
+    <string name="labelhome3">Bonjour</string>
+    <string name="labelregister">Register</string>
+    <string name="tvSlmtdtg">Hola, Bonjour</string>
+    <string name="btnSignin1">Sign In</string>
+    <string name="btnRgstr">Registration</string>
     <string name="app_name">ConstrainLayout</string>
-    <string name="tEmail">Email</string>
+    <string name="Phone">Phone Number</string>
+    <string name="Born">Date of birth</string>
+    <string name="submit">Submit</string>
+    <string name="repass">Repassword</string>
+    <string name="Email">Email</string>
+    <string name="tUsr">Username</string>
     <string name="tPassword">Password</string>
     <string name="tsignin">Sign in</string>
     <string name="tlupapw">Lupa Password</string>
     <string name="tHello">Hai,  </string>
     <string name="txtsambutan">Selamat Datang di Aplikasi kami.
     Silahkan klik tombol okay untuk melanjutkan</string>
-    <string name="label">HOME</string>
+    <string name="labelsignin">SignIn</string>
     <string name="btnlanjut">Okay</string>
 
 </resources>

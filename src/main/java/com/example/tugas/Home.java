@@ -1,33 +1,61 @@
 package com.example.tugas;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class Home extends AppCompatActivity{
-    TextView txtHello, txtkata;
-    Button btnlajt;
+public class Home extends AppCompatActivity {
+
+    Button btnlgn;
+    EditText edtuser, edtpw;
+    String name, password;
+
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        btnlajt = findViewById(R.id.btnlanjut);
-        txtHello = findViewById(R.id.tHi);
-        txtkata = findViewById(R.id.tsambutan);
 
+        btnlgn = findViewById(R.id.btnmsk);
+        edtuser = findViewById(R.id.username);
+        edtpw = findViewById(R.id.password);
 
-        Bundle bundle = getIntent().getExtras();
-        String username = bundle.getString("a");
-
-        txtHello.setText("Hai, " + username+"");
-
-        btnlajt.setOnClickListener(new View.OnClickListener() {
+        btnlgn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                name = edtuser.getText().toString();
+                password = edtpw.getText().toString();
+                String username = "KusukaMasako";
+                String pwd = "fathoni123";
 
+                if (name.isEmpty() || password.isEmpty()) {
+                    Toast t = Toast.makeText(getApplicationContext(),
+                            "Masukkan Email dan Password",
+                            Toast.LENGTH_LONG);
+                    t.show();
+                } else {
+                    if (name.equals(username) && password.equals(pwd)) {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Berhasil",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                        Bundle b = new Bundle();
+                        b.putString("a", name.trim());
+                        b.putString("b", password.trim());
+                        Intent i = new Intent(Home.this, home2.class);
+                        i.putExtras(b);
+                        startActivity(i);
+                    } else {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Login Gagal", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
             }
         });
-
     }
 }

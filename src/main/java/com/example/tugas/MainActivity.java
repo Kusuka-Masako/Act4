@@ -1,61 +1,61 @@
 package com.example.tugas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.tampilanmenu1, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-    Button btnlgn;
-    EditText edtuser, edtpw;
-    String name, password;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.mnDaftar)
+        {
+            Intent i = new Intent(getApplicationContext(), register.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    Button btnsignin, btnrgst;
+    TextView tvhola;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnlgn = findViewById(R.id.btnmsk);
-        edtuser = findViewById(R.id.username);
-        edtpw = findViewById(R.id.password);
+        btnsignin = findViewById(R.id.btnSignin1);
+        btnrgst = findViewById(R.id.btnrgstr);
+        tvhola = findViewById(R.id.tv1);
 
-        btnlgn.setOnClickListener(new View.OnClickListener() {
+        btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name = edtuser.getText().toString();
-                password = edtpw.getText().toString();
-                String username = "KusukaMasako";
-                String pwd = "fathoni123";
-
-                if (name.isEmpty() || password.isEmpty()) {
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Masukkan Email dan Password",
-                            Toast.LENGTH_LONG);
-                    t.show();
-                } else {
-                    if (name.equals(username) && password.equals(pwd)) {
-                        Toast t = Toast.makeText(getApplicationContext(),
-                                "Login Berhasil",
-                                Toast.LENGTH_LONG);
-                        t.show();
-                        Bundle b = new Bundle();
-                        b.putString("a", name.trim());
-                        b.putString("b", password.trim());
-                        Intent i = new Intent(MainActivity.this, Home.class);
-                        i.putExtras(b);
-                        startActivity(i);
-                    } else {
-                        Toast t = Toast.makeText(getApplicationContext(),
-                                "Login Gagal", Toast.LENGTH_LONG);
-                        t.show();
-                    }
-                }
+                Intent i = new Intent(MainActivity.this, Home.class);
+                startActivity(i);
             }
+        });
+        btnrgst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, register.class);
+                startActivity(i);
+            }
+
         });
     }
 }

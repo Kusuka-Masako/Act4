@@ -5,14 +5,17 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tugas">
-        <activity android:name=".Home"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/label"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".register" android:label="@string/labelregister"></activity>
+        <activity android:name=".home3" android:label="@string/labelhome3"/>
+        <activity android:name=".home2" android:label="@string/labelHome2"/>
+        <activity
+            android:name=".Home"
+            android:label="@string/btnSignin1"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" android:label="@string/labelmain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
