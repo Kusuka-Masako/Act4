@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Home extends AppCompatActivity {
+public class login extends AppCompatActivity {
 
     Button btnlgn;
     EditText edtuser, edtpw;
@@ -18,7 +18,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.login);
 
         btnlgn = findViewById(R.id.btnmsk);
         edtuser = findViewById(R.id.username);
@@ -46,7 +46,7 @@ public class Home extends AppCompatActivity {
                         Bundle b = new Bundle();
                         b.putString("a", name.trim());
                         b.putString("b", password.trim());
-                        Intent i = new Intent(Home.this, home2.class);
+                        Intent i = new Intent(login.this, home2.class);
                         i.putExtras(b);
                         startActivity(i);
                     } else {

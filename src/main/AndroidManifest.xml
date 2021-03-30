@@ -8,14 +8,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tugas">
-        <activity android:name=".register" android:label="@string/labelregister"></activity>
-        <activity android:name=".home3" android:label="@string/labelhome3"/>
-        <activity android:name=".home2" android:label="@string/labelHome2"/>
+        <activity android:name=".ActivityLihatData"
+            android:parentActivityName=".home3"
+            android:label="@string/labellihatdata"></activity>
         <activity
-            android:name=".Home"
+            android:name=".register"
+            android:label="@string/labelregister" />
+        <activity
+            android:name=".home3"
+            android:label="@string/labelhome3"
+            android:parentActivityName=".home2"/>
+        <activity
+            android:name=".home2"
+            android:label="@string/labelHome2" />
+        <activity
+            android:name=".login"
             android:label="@string/btnSignin1"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity" android:label="@string/labelmain">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/labelmain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

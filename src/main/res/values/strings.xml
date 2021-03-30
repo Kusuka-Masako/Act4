@@ -1,7 +1,8 @@
 <resources>
     <string name="labelmain">Login</string>
     <string name="labelHome2">HOME</string>
-    <string name="labelhome3">Bonjour</string>
+    <string name="labelhome3">Contact</string>
+    <string name="labellihatdata">Info Kontak</string>
     <string name="labelregister">Register</string>
     <string name="tvSlmtdtg">Hola, Bonjour</string>
     <string name="btnSignin1">Sign In</string>
@@ -21,5 +22,12 @@
     Silahkan klik tombol okay untuk melanjutkan</string>
     <string name="labelsignin">SignIn</string>
     <string name="btnlanjut">Okay</string>
+    <string name="lihatdata">Lihat Data</string>
+    <string name="editdata">Edit Data</string>
+    <string name="datakontak">Data Kontak</string>
+    <string name="namaitem">Nama Item</string>
+    <string name="detailkontak">Detail Kontak</string>
+    <string name="nama">Nama</string>
+    <string name="notel">No. Telepon</string>
 
 </resources>
